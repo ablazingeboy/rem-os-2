@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <!-- The root menu. -->
+    <RootMenu onroot="23">
+        <Program label="Terminal">alacritty</Program>
+        <Program label="File Manager">pcmanfm</Program>
+        <Program label="Firefox">firefox</Program>
+        <Separator/>
+        <Program label="Lock Screen">betterlockscreen -l</Program>
+    </RootMenu>
+
+    <RootMenu onroot="45"/>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+        <Option>notitle</Option>
+    </Group>
+	
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="-1" autohide="off">
+
+        <Pager labeled="true"/>
+        
+        <Spacer width="8"/>
+
+        <TaskList maxwidth="256"/>
+
+        <Dock/>
+        
+        <Clock format="%H:%M"></Clock>
+
+        <Spacer width="8"/>
+
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>JetBrainsMono Nerd Font-10:bold</Font>
+        <Width>4</Width>
+        <Height>24</Height>
+        <Corner>0</Corner>
+        <Foreground>#a09991</Foreground>
+        <Background>#352c31</Background>
+        <Outline>#352c31</Outline>
+        <Opacity>0.5</Opacity>
+        <Active>
+            <Foreground>#a09991</Foreground>
+            <Background>#352c31</Background>
+            <Outline>#99D2F1</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <TrayStyle group="true" list="all">
+        <Font>JetBrainsMono Nerd Font-10</Font>
+        <Background>#352c31</Background>
+        <Foreground>#a09991</Foreground>
+        <Outline>#352c31</Outline>
+        <Opacity>0.75</Opacity>
+    </TrayStyle>
+    <TaskListStyle>
+      <Font>JetBrainsMono Nerd Font-10</Font>
+      <Active>
+        <Foreground>#352c31</Foreground>
+        <Background>#99D2F1</Background>
+      </Active>
+      <Foreground>#a09991</Foreground>
+      <Background>#352c31</Background>
+    </TaskListStyle>
+    <PagerStyle>
+        <Outline>#352c31</Outline>
+        <Foreground>#a09991</Foreground>
+        <Background>#352c31</Background>
+        <Text>#a09991</Text>
+        <Active>
+            <Foreground>#ff7fff</Foreground>
+            <Background>#352c31</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>JetBrainsMono Nerd Font-10</Font>
+        <Foreground>#a09991</Foreground>
+        <Background>#352c31</Background>
+        <Outline>#352c31</Outline>
+        <Active>
+            <Foreground>#352c31</Foreground>
+            <Background>#ff7fff</Background>
+        </Active>
+        <Opacity>0.85</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>JetBrainsMono Nerd Font-10</Font>
+        <Foreground>#ff7fff</Foreground>
+        <Background>#352c31</Background>
+    </PopupStyle>
+
+    <!-- Virtual Desktops -->
+    <Desktops width="4" height="1">
+        <Background type="solid">#111111</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>click</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+    <Key key="F11">maximize</Key>
+
+    <Key mask="A" key="Tab">exec:rofi -show window -theme rem.rasi</Key>
+    <Key mask="AS" key="q">close</Key>
+    <Key mask="A" key="d">exec:rofi -show drun -theme rem.rasi</Key>
+    <Key mask="A" key="w">exec:firefox</Key>
+    <Key mask="AS" key="l">exec:betterlockscreen -l</Key>
+    <Key mask="AS" key="p">exec:rofi -show power-menu -modi power-menu:rofi-power-menu -theme rem-powermenu.rasi</Key>
+    <Key mask="AS" key="r">restart</Key> 
+    <Key mask="AS" key="e">exit</Key>   
+    <Key mask="A" key="backslash">exec:pcmanfm</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="A" key="Right">rdesktop</Key>
+    <Key mask="A" key="Left">ldesktop</Key>
+    <Key mask="A" key="Return">exec:alacritty</Key>
+
+    <StartupCommand>feh --bg-fill $HOME/.rem/bg.jpg</StartupCommand>
+    <RestartCommand>feh --bg-fill $HOME/.rem/bg.jpg</RestartCommand>
+
+    <StartupCommand>betterlockscreen -u $HOME/.rem/bg.jpg</StartupCommand>
+    <StartupCommand>devmon</StartupCommand>
+
+</JWM>
